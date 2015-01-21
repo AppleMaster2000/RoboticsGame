@@ -1,0 +1,54 @@
+
+pack.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+images/RunningSonicBlue
+  rotate: false
+  xy: 1, 1
+  size: 29, 38
+  orig: 29, 38
+  offset: 0, 0
+  index: 3
+images/RunningSonicBlue
+  rotate: false
+  xy: 32, 1
+  size: 28, 38
+  orig: 28, 38
+  offset: 0, 0
+  index: 11
+images/RunningSonicBlue
+  rotate: false
+  xy: 62, 1
+  size: 23, 38
+  orig: 23, 38
+  offset: 0, 0
+  index: 9
+images/RunningSonicBlue
+  rotate: false
+  xy: 87, 1
+  size: 22, 38
+  orig: 22, 38
+  offset: 0, 0
+  index: 1
+images/RunningSonicBlue
+  rotate: false
+  xy: 111, 1
+  size: 22, 38
+  orig: 22, 38
+  offset: 0, 0
+  index: 5
+images/RunningSonicBlue
+  rotate: false
+  xy: 135, 1
+  size: 22, 38
+  orig: 22, 38
+  offset: 0, 0
+  index: 13
+images/RunningSonicBlue
+  rotate: false
+  xy: 159, 1
+  size: 21, 38
+  orig: 21, 38
+  offset: 0, 0
+  index: 7
