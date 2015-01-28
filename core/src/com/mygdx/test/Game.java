@@ -35,16 +35,26 @@ public class Game extends ApplicationAdapter {
         fullscreen = false;
         Gdx.graphics.setDisplayMode(1280, 720, fullscreen);
         batch = new SpriteBatch();
-        img = new Texture("badlogic.jpg");
+        //img = new Texture("badlogic.jpg");
+        img = new Texture("sprite.png");
         rect = new Rectangle(50, 50, 100, 100);
         speed = new Vector2(4, 4);
 
-        sprite = new Sprite(img);
+//      sprite = new Sprite(img);
+//      sprite.setPosition(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
+//      sprite.setPosition(0, 0);
+//      sonicAnimation = new Animation(.065f, new TextureAtlas("SonicWalkCut-packed/pack.atlas").getRegions(), Animation.PlayMode.LOOP);
+//      elapsedTime = 0;
+//      staticSprite = new Sprite(new TextureRegion(sonicAnimation.getKeyFrame(elapsedTime)));
+
+        staticSprite = new Sprite(img);
 //        sprite.setPosition(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
-        sprite.setPosition(0, 0);
+        staticSprite.setPosition(0, 0);
         sonicAnimation = new Animation(.065f, new TextureAtlas("SonicWalkCut-packed/pack.atlas").getRegions(), Animation.PlayMode.LOOP);
         elapsedTime = 0;
-        staticSprite = new Sprite(new TextureRegion(sonicAnimation.getKeyFrame(elapsedTime)));
+        sprite = new Sprite(new TextureRegion(sonicAnimation.getKeyFrame(elapsedTime)));
+
+
         camera = new OrthographicCamera();
         camera.viewportHeight = Gdx.graphics.getHeight();
         camera.viewportWidth = Gdx.graphics.getWidth();
@@ -103,27 +113,27 @@ public class Game extends ApplicationAdapter {
         if(Gdx.input.isKeyPressed(Input.Keys.L)) {
             camera.zoom += .01f;
         }
-        if(!(rect.getX() <= 0)) {
+        if(!(staticSprite.getX() <= 0)) {
             if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-                rect.setX(rect.getX() - speed.x);
+                staticSprite.setX(staticSprite.getX() - speed.x);
                 camera.position.x = camera.position.x - speed.x;
             }
         }
-        if (!(rect.getX() + rect.getWidth() >= Gdx.graphics.getWidth())) {
+        if (!(staticSprite.getX() + staticSprite.getWidth() >= Gdx.graphics.getWidth())) {
             if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-                rect.setX(rect.getX() + speed.x);
+                staticSprite.setX(staticSprite.getX() + speed.x);
                 camera.position.x = camera.position.x + speed.x;
             }
         }
-        if(!(rect.getY() <= 0)) {
+        if(!(staticSprite.getY() <= 0)) {
             if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-                rect.setY(rect.getY() - speed.y);
+                staticSprite.setY(staticSprite.getY() - speed.y);
                 camera.position.y = camera.position.y- speed.y;
             }
         }
-        if (!(rect.getY() + rect.getHeight() >= Gdx.graphics.getHeight())) {
+        if (!(staticSprite.getY() + staticSprite.getHeight() >= Gdx.graphics.getHeight())) {
             if(Gdx.input.isKeyPressed(Input.Keys.UP)) {
-                rect.setY(rect.getY() + speed.y);
+                staticSprite.setY(staticSprite.getY() + speed.y);
                 camera.position.y = camera.position.y + speed.y;
             }
         }
